@@ -18,4 +18,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: run
-        run: env HOUSEWORK_SHEET_URL=${{ secrets.HOUSEWORK_SHEET_URL }} LINE_NOTIFY_TOKEN={{ secrets.LINE_NOTIFY_TOKEN }} bash -c ‘./gradlew runShadow’
+        run: env HOUSEWORK_SHEET_URL=${{ secrets.HOUSEWORK_SHEET_URL }} LINE_NOTIFY_TOKEN=${{ secrets.LINE_NOTIFY_TOKEN }} bash -c ‘./gradlew runShadow’

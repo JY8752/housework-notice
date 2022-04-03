@@ -1,2 +1,5 @@
 # housework-notice
 家事表の更新を毎日LINE通知するアプリ
+(github actionsでわざわざkotlinのアプリをスケジュール実行しなくてもローカルでcron実行でよかったんじゃないか感。)
+
+→github actionsとkotlinのちょっとした処理の練習ということにしておこう。

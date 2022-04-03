@@ -1,7 +1,9 @@
 name: notify LINE bot
 on:
   schedule:
+    # 毎日20時くらいに起動すればいいかな
     - cron: '1 * * * *'
+#    - cron: '* 20 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,9 +17,5 @@ jobs:
           cache: 'gradle'
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-#      - name: ktlint check
-#        run: ./gradlew ktlintCheck
-#      - name: build
-#        run: ./gradlew build
       - name: run
-        run: ./gradlew run
+        run: env HOUSEWORK_SHEET_URL=${{ secrets.HOUSEWORK_SHEET_URL }} LINE_NOTIFY_TOKEN={{ secrets.LINE_NOTIFY_TOKEN }} bash -c ‘./gradlew runShadow’

@@ -2,7 +2,7 @@ name: notify LINE bot
 on:
   schedule:
     # 毎日20時くらいに起動すればいいかな
-    - cron: '* 11 * * *'
+    - cron: '0 11 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
